@@ -26,7 +26,7 @@
       </p>
     </section>
 
-    <form class="form-box">
+    <form class="form-box" id="reserva-form">
       <label for="nombre">Nombre completo</label>
       <input
         type="text"
@@ -50,7 +50,7 @@
 
       <label for="actividad">Actividad de interés</label>
       <select id="actividad" name="actividad">
-        <option>Trekking Laguna</option>
+        <option>Trekking guiado Laguna</option>
         <option>Mirador Cóndor</option>
         <option>Cabalgata en el cerro</option>
         <option>Otra</option>
@@ -64,6 +64,7 @@
       ></textarea>
 
       <button type="submit" class="btn">Enviar solicitud</button>
+      <p id="form-feedback" class="form-feedback"></p>
     </form>
 
     <div class="contact-info">

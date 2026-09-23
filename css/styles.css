@@ -234,6 +234,21 @@ img {
   min-height: 100px;
 }
 
+/* mensaje de confirmacion tras enviar el formulario */
+.form-feedback {
+  display: none;
+  margin-top: 16px;
+  padding: 14px 16px;
+  background: #e4ecdf;
+  color: var(--forest);
+  border-left: 4px solid var(--ochre);
+  font-size: 0.95rem;
+}
+
+.form-feedback.show {
+  display: block;
+}
+
 .contact-info {
   background: var(--forest);
   color: var(--bone);
