@@ -307,6 +307,73 @@ img {
   }
 }
 
+
+/* ===== Tarjetas de panoramas (página Panoramas) ===== */
+.panoramas-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  padding: 24px 6% 72px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #cfc7b4;
+  border-radius: 2px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  background: var(--sage);
+}
+.card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-tag {
+  color: var(--ochre);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.card h3 {
+  font-size: 1.15rem;
+  color: var(--forest);
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: var(--sage);
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin-bottom: 18px;
+  flex-grow: 1;
+}
+
+.btn-small {
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  align-self: flex-start;
+}
+
+@media (max-width: 1024px) {
+  .panoramas-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+
+
 /* ===== Pie de página (igual en todas las páginas) ===== */
 footer {
   background: var(--ink);
