@@ -191,7 +191,7 @@ img {
   margin: 0 auto;
 }
 
-.section h2 {
+.section h1 {
   font-size: 2rem;
   margin-bottom: 18px;
 }
@@ -308,7 +308,7 @@ img {
 }
 
 
-/* ===== Tarjetas de panoramas (página Panoramas) ===== */
+/* =====  (página Panoramas) ===== */
 .panoramas-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -371,8 +371,26 @@ img {
   }
 }
 
+/* ===== Llamado a la acción (página Panoramas) ===== */
+.cta {
+  background: var(--forest);
+  color: var(--bone);
+  text-align: center;
+  padding: 64px 6%;
+}
 
+.cta h2 {
+  font-size: 2rem;
+  margin-bottom: 14px;
+}
 
+.cta p {
+  color: #e4e0d4;
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+/* ===== fin seccion de fpagina de panoramas ===== */
 
 /* ===== Pie de página (igual en todas las páginas) ===== */
 footer {
