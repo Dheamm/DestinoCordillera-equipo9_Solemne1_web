@@ -186,7 +186,7 @@ img {
 
 /* ===== Sección genérica de contenido ===== */
 .section {
-  padding: 24px 6% 24px;
+  padding: 40px 6%;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -202,11 +202,19 @@ img {
   font-size: 1.05rem;
 }
 
-/* ===== Formulario (página Reserva) ===== */
-.form-box {
-  max-width: 560px;
+/* ===== Formulario + mapa lado a lado (pagina Reserva) ===== */
+.reserva-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 0 6% 48px;
+  padding: 0 6% 40px;
+}
+
+.form-box {
+  padding: 0;
 }
 
 .form-box label {
@@ -252,17 +260,51 @@ img {
 .contact-info {
   background: var(--forest);
   color: var(--bone);
-  padding: 48px 6%;
+  padding: 40px 6%;
   display: flex;
   flex-wrap: wrap;
   gap: 32px;
   justify-content: space-between;
+  border-top: 1px solid #dcd4c2;
+  border-bottom: 1px solid #dcd4c2;
 }
 
 .contact-info h3 {
   color: var(--ochre);
   margin-bottom: 8px;
   font-size: 1.1rem;
+}
+
+.contact-info p {
+  color: #cfd6c9;
+}
+
+/* ===== Mapa (pagina Reserva) ===== */
+.map-section {
+  padding: 0;
+}
+
+.map-section iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  border: 3px solid var(--forest);
+  border-radius: 2px;
+  display: block;
+}
+
+.map-note {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: var(--sage);
+  text-align: center;
+}
+
+/* apila el formulario y el mapa en pantallas chicas */
+@media (max-width: 768px) {
+  .reserva-layout {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ===== Pie de página (igual en todas las páginas) ===== */
