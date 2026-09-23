@@ -1,0 +1,304 @@
+/* ===== Variables de color y tipografía del sitio ===== */
+:root {
+  --forest: #1b2a1f;
+  --bone: #f0e9dc;
+  --ochre: #c08a2e;
+  --sage: #48594e;
+  --ink: #14150f;
+}
+
+/* ===== Reset básico ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background: var(--bone);
+}
+
+h1,
+h2,
+h3 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ===== Barra de navegación (igual en todas las páginas) ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 6%;
+  background: var(--forest);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar .logo {
+  color: var(--bone);
+  font-weight: 600;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.navbar a {
+  color: var(--bone);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.navbar a.active {
+  color: var(--ochre);
+  border-bottom: 2px solid var(--ochre);
+  padding-bottom: 4px;
+}
+
+/* menú hamburguesa (solo visible en celular) */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--bone);
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+/* ===== Hero con video de fondo (página Inicio) ===== */
+.hero {
+  position: relative;
+  height: 82vh;
+  min-height: 420px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.hero video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(15, 20, 14, 0.92) 0%,
+    rgba(15, 20, 14, 0.35) 55%,
+    rgba(15, 20, 14, 0.15) 100%
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 6% 56px;
+  max-width: 640px;
+}
+
+.hero-content .kicker {
+  color: var(--ochre);
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.hero-content h1 {
+  color: var(--bone);
+  font-size: 3rem;
+  line-height: 1.05;
+  font-weight: 900;
+  margin-bottom: 16px;
+}
+
+.hero-content p {
+  color: #e4e0d4;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  margin-bottom: 26px;
+  max-width: 480px;
+}
+
+/* ===== Botones ===== */
+.btn {
+  display: inline-block;
+  background: var(--ochre);
+  color: var(--ink);
+  padding: 14px 28px;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* ===== Franja de accesos rápidos (Inicio) ===== */
+.quicklinks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: var(--forest);
+}
+
+.quicklinks a {
+  padding: 26px 32px;
+  color: var(--bone);
+  text-decoration: none;
+  border-right: 1px solid rgba(240, 233, 220, 0.15);
+  font-size: 0.95rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quicklinks a:last-child {
+  border-right: none;
+}
+
+.quicklinks .arrow {
+  color: var(--ochre);
+}
+
+/* ===== Sección genérica de contenido ===== */
+.section {
+  padding: 72px 6%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 18px;
+}
+
+.section p {
+  line-height: 1.7;
+  color: var(--sage);
+  font-size: 1.05rem;
+}
+
+/* ===== Formulario (página Reserva) ===== */
+.form-box {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 48px 6%;
+}
+
+.form-box label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  color: var(--sage);
+}
+
+.form-box input,
+.form-box select,
+.form-box textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 20px;
+  border: 1px solid #cfc7b4;
+  border-radius: 2px;
+  font-family: "Work Sans", sans-serif;
+  font-size: 1rem;
+  background: #fff;
+}
+
+.form-box textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.contact-info {
+  background: var(--forest);
+  color: var(--bone);
+  padding: 48px 6%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: space-between;
+}
+
+.contact-info h3 {
+  color: var(--ochre);
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+/* ===== Pie de página (igual en todas las páginas) ===== */
+footer {
+  background: var(--ink);
+  color: #cfcabc;
+  padding: 36px 6%;
+  font-size: 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ===== Responsive: celulares y tablets ===== */
+@media (max-width: 768px) {
+  .navbar ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--forest);
+    flex-direction: column;
+    padding: 20px 6%;
+    gap: 18px;
+  }
+
+  .navbar ul.open {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .quicklinks {
+    grid-template-columns: 1fr;
+  }
+
+  .quicklinks a {
+    border-right: none;
+    border-bottom: 1px solid rgba(240, 233, 220, 0.15);
+  }
+
+  .hero-content h1 {
+    font-size: 2.1rem;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
