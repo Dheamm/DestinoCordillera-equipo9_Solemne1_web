@@ -307,7 +307,6 @@ img {
   }
 }
 
-
 /* ===== Tarjetas de panoramas (página Panoramas) ===== */
 .panoramas-grid {
   display: grid;
@@ -370,9 +369,6 @@ img {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
-
-
 
 /* ===== Pie de página (igual en todas las páginas) ===== */
 footer {
