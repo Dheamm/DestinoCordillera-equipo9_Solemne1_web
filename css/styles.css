@@ -186,7 +186,7 @@ img {
 
 /* ===== Sección genérica de contenido ===== */
 .section {
-  padding: 72px 6% 24px;
+  padding: 24px 6% 24px;
   max-width: 900px;
   margin: 0 auto;
 }
