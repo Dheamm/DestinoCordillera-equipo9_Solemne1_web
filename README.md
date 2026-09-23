@@ -28,17 +28,19 @@ Sitio de 4 páginas que presenta un destino turístico de montaña: inicio con v
 
 ## Estructura del proyecto
 
+```
 DestinoCordillera_Solemne1_web/
 ├── index.html
 ├── panoramas.html
 ├── alojamiento.html
 ├── reserva.html
 ├── css/
-│ └── styles.css
+│   └── styles.css
 ├── js/
-│ └── main.js
+│   └── main.js
 ├── img/
 └── README.md
+```
 
 ## Distribución de responsabilidades
 
