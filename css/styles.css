@@ -371,6 +371,7 @@ img {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  text-align: center;
 }
 
 .card-tag {
@@ -397,12 +398,20 @@ img {
 .btn-small {
   padding: 10px 20px;
   font-size: 0.9rem;
-  align-self: flex-start;
+  align-self: center;
 }
 
 @media (max-width: 1024px) {
   .panoramas-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .panoramas-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 24px 6% 48px;
   }
 }
 
