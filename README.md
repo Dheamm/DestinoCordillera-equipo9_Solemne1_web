@@ -48,7 +48,7 @@ DestinoCordillera_Solemne1_web/
 | ---------------- | ------------------------------------------- |
 | Danko Gangas     | Alojamiento y gastronomía                   |
 | Benjamín Herrera | Panoramas                                   |
-| Ítalo Osorio     | Inicio, Reserva y contacto, Repositorio git |
+| Ítalo Osorio     | Inicio, reserva y contacto, repositorio git |
 
 ## Historial de commits
 

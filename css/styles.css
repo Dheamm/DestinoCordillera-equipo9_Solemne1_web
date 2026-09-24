@@ -300,6 +300,40 @@ img {
   text-align: center;
 }
 
+/* tabla de informacion*/
+.tabla-box {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 6% 40px;
+  overflow-x: auto;
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border: 1px solid #cfc7b4;
+}
+
+.tabla th {
+  background: var(--forest);
+  color: var(--bone);
+  text-align: left;
+  padding: 14px 16px;
+  font-size: 0.95rem;
+}
+
+.tabla td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #cfc7b4;
+  color: var(--sage);
+  font-size: 0.95rem;
+}
+
+.tabla tr:nth-child(even) td {
+  background: var(--bone);
+}
+
 /* apila el formulario y el mapa en pantallas chicas */
 @media (max-width: 768px) {
   .reserva-layout {
@@ -420,5 +454,85 @@ footer {
   footer {
     flex-direction: column;
     text-align: center;
+  }
+}
+
+/* tarjetas de alojamientos*/
+.alojamientos {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 6% 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.aloja {
+  display: flex;
+  background: #fff;
+  border: 1px solid #cfc7b4;
+  border-radius: 2px;
+  overflow: hidden;
+  height: 240px;
+}
+
+.aloja:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.aloja img {
+  width: 40%;
+  object-fit: cover;
+  height: 100%;
+}
+
+.aloja-info {
+  flex: 1;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+.aloja-info h3 {
+  font-size: 1.4rem;
+  color: var(--forest);
+  margin: 4px 0 10px;
+}
+
+.aloja-info p {
+  color: var(--sage);
+  line-height: 1.6;
+  margin-bottom: 18px;
+  flex-grow: 1;
+}
+
+.aloja-pie {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.aloja-precio {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--forest);
+}
+
+.aloja-precio small {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--sage);
+}
+
+@media (max-width: 768px) {
+  .aloja,
+  .aloja:nth-child(even) {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .aloja img {
+    width: 100%;
+    height: 200px;
   }
 }
