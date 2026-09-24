@@ -10,18 +10,20 @@
   <body>
     <header class="navbar">
       <a href="index.html" class="logo">Destino Cordillera</a>
-      <button class="nav-toggle">☰</button>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a class="active" href="panoramas.html">Panoramas</a></li>
-        <li><a href="alojamiento.html">Alojamiento</a></li>
-        <li><a href="reserva.html">Reserva</a></li>
-      </ul>
+      <nav aria-label="Principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a class="active" href="panoramas.html">Panoramas</a></li>
+          <li><a href="alojamiento.html">Alojamiento</a></li>
+          <li><a href="reserva.html">Reserva</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" aria-label="Abrir menú">☰</button>
     </header>
 
     <main>
       <section class="section">
-        <h2>Panoramas en la cordillera</h2>
+        <h1>Panoramas en la cordillera</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel
           blanditiis similique vitae tenetur veniam iste accusamus placeat velit
@@ -30,9 +32,9 @@
         </p>
       </section>
 
-      <section class="panoramas-grid">
+      <section class="panoramas-grid" aria-label="Panoramas">
         <article class="card">
-          <img src="img/img_Trekking.webp" alt="Laguna de montaña" />
+          <img src="img/panorama-trekking.webp" alt="Laguna de montaña" />
           <div class="card-body">
             <span class="card-tag">Trekking · 6 horas</span>
             <h3>Trekking guiado laguna</h3>
@@ -46,7 +48,7 @@
 
         <article class="card">
           <img
-            src="img/img_mirador.webp"
+            src="img/panorama-mirador.webp"
             alt="Mirador con vista a la cordillera"
           />
           <div class="card-body">
@@ -61,7 +63,7 @@
         </article>
 
         <article class="card">
-          <img src="img/cabalgata.webp" alt="Cabalgata en el cerro" />
+          <img src="img/panorama-cabalgata.webp" alt="Cabalgata en el cerro" />
           <div class="card-body">
             <span class="card-tag">Excursión · 4 horas</span>
             <h3>Cabalgata en el cerro</h3>
@@ -74,7 +76,7 @@
         </article>
 
         <article class="card">
-          <img src="img/img_terma.webp" alt="Termas naturales" />
+          <img src="img/panorama-termas.webp" alt="Termas naturales" />
           <div class="card-body">
             <span class="card-tag">Relajo · Día completo</span>
             <h3>Termas del valle</h3>
@@ -96,9 +98,9 @@
         </p>
       </section>
 
-      <section class="panoramas-grid">
+      <section class="panoramas-grid" aria-label="Rutas y lugares de interés">
         <article class="card">
-          <img src="img/img_ruta_nieve.webp" alt="Ruta de nieve en la montaña" />
+          <img src="img/ruta-nieve.webp" alt="Ruta de nieve en la montaña" />
           <div class="card-body">
             <span class="card-tag">Invierno · Día completo</span>
             <h3>Ruta de nieve</h3>
@@ -112,10 +114,7 @@
         </article>
 
         <article class="card">
-          <img
-            src="img/img_mirador_estrellas.webp"
-            alt="Cielo nocturno estrellado"
-          />
+          <img src="img/ruta-estrellas.webp" alt="Cielo nocturno estrellado" />
           <div class="card-body">
             <span class="card-tag">Nocturno · 3 horas</span>
             <h3>Observación de estrellas</h3>
@@ -129,7 +128,7 @@
         </article>
 
         <article class="card">
-          <img src="img/img_cascada.webp" alt="Cascada entre rocas" />
+          <img src="img/ruta-cascada.webp" alt="Cascada entre rocas" />
           <div class="card-body">
             <span class="card-tag">Sendero · 3 horas</span>
             <h3>Sendero de la cascada</h3>
@@ -143,7 +142,7 @@
         </article>
 
         <article class="card">
-          <img src="img/img_pueblo.webp" alt="Pueblo de montaña" />
+          <img src="img/ruta-pueblo.webp" alt="Pueblo de montaña" />
           <div class="card-body">
             <span class="card-tag">Cultural · 2 horas</span>
             <h3>Recorrido por el pueblo</h3>

@@ -23,13 +23,13 @@ Sitio de 4 páginas que presenta un destino turístico de montaña: inicio con v
 
 - HTML5 semántico
 - CSS3 propio (sin frameworks)
-- JavaScript (menú responsive)
+- JavaScript
 - No se utilizó Bootstrap
 
 ## Estructura del proyecto
 
 ```
-DestinoCordillera_Solemne1_web/
+estinoCordillera-equipo9_Solemne1_web/
 ├── index.html
 ├── panoramas.html
 ├── alojamiento.html

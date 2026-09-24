@@ -10,18 +10,20 @@
   <body>
     <header class="navbar">
       <a href="index.html" class="logo">Destino Cordillera</a>
+      <nav aria-label="Principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="panoramas.html">Panoramas</a></li>
+          <li><a href="alojamiento.html">Alojamiento</a></li>
+          <li><a class="active" href="reserva.html">Reserva</a></li>
+        </ul>
+      </nav>
       <button class="nav-toggle" aria-label="Abrir menú">☰</button>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="panoramas.html">Panoramas</a></li>
-        <li><a href="alojamiento.html">Alojamiento</a></li>
-        <li><a class="active" href="reserva.html">Reserva</a></li>
-      </ul>
     </header>
 
     <main>
       <section class="section">
-        <h2>Reserva tu experiencia</h2>
+        <h1>Reserva tu experiencia</h1>
         <p>
           Elige una actividad o un alojamiento, completa tus datos y nuestro
           equipo te contactará para confirmar disponibilidad.
@@ -165,7 +167,7 @@
           <p id="form-feedback" class="form-feedback" role="status"></p>
         </form>
 
-        <section class="map-section">
+        <section class="map-section" aria-label="Ubicación referencial">
           <div class="map-frame" id="map-frame">
             <span class="map-loading">Cargando mapa…</span>
             <iframe
@@ -179,20 +181,20 @@
         </section>
       </div>
 
-      <div class="contact-info">
+      <section class="contact-info" aria-label="Datos de contacto">
         <div>
-          <h3>Teléfono</h3>
+          <h2>Teléfono</h2>
           <p>+56 9 1234 5678</p>
         </div>
         <div>
-          <h3>Correo</h3>
+          <h2>Correo</h2>
           <p>contacto@destinocordillera.cl</p>
         </div>
         <div>
-          <h3>Ubicación</h3>
+          <h2>Ubicación</h2>
           <p>Ruta Andina km 14, Destino Cordillera</p>
         </div>
-      </div>
+      </section>
     </main>
 
     <footer>

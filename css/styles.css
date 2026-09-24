@@ -218,6 +218,7 @@ img {
   margin: 0 auto;
 }
 
+.section h1,
 .section h2 {
   font-size: 2rem;
   margin-bottom: var(--espacio-titulo);
@@ -421,7 +422,7 @@ img {
   border-bottom: 1px solid #dcd4c2;
 }
 
-.contact-info h3 {
+.contact-info h2 {
   color: var(--ochre);
   margin-bottom: 8px;
   font-size: 1.1rem;

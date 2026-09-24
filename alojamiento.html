@@ -10,18 +10,20 @@
   <body>
     <header class="navbar">
       <a href="index.html" class="logo">Destino Cordillera</a>
-      <button class="nav-toggle">☰</button>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="panoramas.html">Panoramas</a></li>
-        <li><a class="active" href="alojamiento.html">Alojamiento</a></li>
-        <li><a href="reserva.html">Reserva</a></li>
-      </ul>
+      <nav aria-label="Principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="panoramas.html">Panoramas</a></li>
+          <li><a class="active" href="alojamiento.html">Alojamiento</a></li>
+          <li><a href="reserva.html">Reserva</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" aria-label="Abrir menú">☰</button>
     </header>
 
     <main>
       <section class="section">
-        <h2>Alojamiento y gastronomía</h2>
+        <h1>Alojamiento y gastronomía</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel
           blanditiis similique vitae tenetur veniam iste accusamus placeat velit
@@ -34,9 +36,12 @@
         <h2>Dónde alojar</h2>
       </section>
 
-      <section class="alojamientos">
+      <section class="alojamientos" aria-label="Opciones de alojamiento">
         <article class="aloja">
-          <img src="img/hotel.webp" alt="Hotel con vista a la cordillera" />
+          <img
+            src="img/aloja-hotel.webp"
+            alt="Hotel con vista a la cordillera"
+          />
           <div class="aloja-info">
             <span class="card-tag">Hotel</span>
             <h3>Hotel Boutique Andino</h3>
@@ -52,7 +57,10 @@
         </article>
 
         <article class="aloja">
-          <img src="img/cabanas.webp" alt="Cabañas de madera en el valle" />
+          <img
+            src="img/aloja-cabanas.webp"
+            alt="Cabañas de madera en el valle"
+          />
           <div class="aloja-info">
             <span class="card-tag">Cabañas</span>
             <h3>Cabañas del Valle</h3>
@@ -68,7 +76,7 @@
         </article>
 
         <article class="aloja">
-          <img src="img/refugio.webp" alt="Refugio de montaña" />
+          <img src="img/aloja-refugio.webp" alt="Refugio de montaña" />
           <div class="aloja-info">
             <span class="card-tag">Refugio</span>
             <h3>Refugio Cóndor</h3>
@@ -84,7 +92,7 @@
         </article>
 
         <article class="aloja">
-          <img src="img/camping.webp" alt="Zona de camping" />
+          <img src="img/aloja-camping.webp" alt="Zona de camping" />
           <div class="aloja-info">
             <span class="card-tag">Camping</span>
             <h3>Camping Río Claro</h3>
@@ -112,10 +120,10 @@
         <table class="tabla">
           <thead>
             <tr>
-              <th>Nombre</th>
-              <th>Tipo</th>
-              <th>Horario</th>
-              <th>Precio por persona</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Tipo</th>
+              <th scope="col">Horario</th>
+              <th scope="col">Precio por persona</th>
             </tr>
           </thead>
           <tbody>
