@@ -404,6 +404,25 @@ img {
   }
 }
 
+/* ===== Llamado a la acción (página Panoramas) ===== */
+.cta {
+  background: var(--forest);
+  color: var(--bone);
+  text-align: center;
+  padding: 64px 6%;
+}
+
+.cta h2 {
+  font-size: 2rem;
+  margin-bottom: 14px;
+}
+
+.cta p {
+  color: #e4e0d4;
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
 /* ===== Pie de página (igual en todas las páginas) ===== */
 footer {
   background: var(--ink);
