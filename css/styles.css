@@ -79,7 +79,6 @@ img {
   padding-bottom: 4px;
 }
 
-/* menú hamburguesa (solo visible en celular) */
 .nav-toggle {
   display: none;
   background: none;
@@ -99,13 +98,24 @@ img {
   align-items: flex-end;
 }
 
+.hero-videos {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
 .hero video {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.hero video.activo {
+  opacity: 1;
 }
 
 .hero::after {
@@ -201,6 +211,7 @@ img {
   color: var(--ochre);
 }
 
+/* ===== Sección genérica de contenido ===== */
 .section {
   padding: var(--espacio-seccion) 6%;
   max-width: 900px;
@@ -247,7 +258,6 @@ img {
   padding: var(--espacio-titulo) 6% var(--espacio-seccion);
 }
 
-/* tarjeta del formulario */
 .form-box {
   background: #fff;
   border: 1px solid #cfc7b4;
@@ -255,7 +265,6 @@ img {
   padding: 28px;
 }
 
-/* selector Actividad / Alojamiento */
 .tipo-reserva {
   border: none;
   padding: 0;
@@ -319,7 +328,6 @@ img {
   outline-offset: 2px;
 }
 
-/* campos en dos columnas */
 .campos {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -386,7 +394,6 @@ img {
   display: block;
 }
 
-/* mensaje de confirmacion formulario */
 .form-feedback {
   display: none;
   margin-top: 16px;
@@ -525,7 +532,6 @@ img {
   background: var(--bone);
 }
 
-/* apila el formulario y el mapa en pantallas chicas */
 @media (max-width: 768px) {
   .reserva-layout {
     grid-template-columns: 1fr;

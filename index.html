@@ -21,12 +21,25 @@
 
     <main>
       <section class="hero">
-        <video autoplay muted loop playsinline poster="img/hero-poster.webp">
-          <source src="img/video-cordillera.mp4" type="video/mp4" />
-        </video>
+        <!-- Los videos se reproducen en orden y luego vuelve a empezar.
+             Para cambiar el orden o agregar más, edita data-playlist. -->
+        <div
+          class="hero-videos"
+          data-playlist="img/video-cordillera.mp4,img/video-cordillera-2.mp4,img/video-cordillera-3.mp4"
+        >
+          <video
+            class="activo"
+            src="img/video-cordillera.mp4"
+            autoplay
+            muted
+            playsinline
+            poster="img/hero-poster.webp"
+          ></video>
+          <video muted playsinline preload="auto"></video>
+        </div>
         <div class="hero-content">
           <span class="kicker">Cordillera de los Andes</span>
-          <h1>Silencio y serenidad</h1>
+          <h1>Entre picos y silencio</h1>
           <p>
             Un destino donde la cordillera se vive de cerca: rutas, refugios y
             sabores locales en gran altura.
