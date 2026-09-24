@@ -5,6 +5,9 @@
   --ochre: #c08a2e;
   --sage: #48594e;
   --ink: #14150f;
+
+  --espacio-seccion: 40px;
+  --espacio-titulo: 18px;
 }
 
 /* ===== Reset básico ===== */
@@ -198,22 +201,39 @@ img {
   color: var(--ochre);
 }
 
-/* ===== Sección genérica de contenido ===== */
 .section {
-  padding: 40px 6%;
+  padding: var(--espacio-seccion) 6%;
   max-width: 900px;
   margin: 0 auto;
 }
 
 .section h2 {
   font-size: 2rem;
-  margin-bottom: 18px;
+  margin-bottom: var(--espacio-titulo);
+}
+
+.section h2:last-child {
+  margin-bottom: 0;
 }
 
 .section p {
   line-height: 1.7;
   color: var(--sage);
   font-size: 1.05rem;
+}
+
+.section + .section,
+.panoramas-grid + .section,
+.alojamientos + .section,
+.tabla-box + .section {
+  padding-top: 0;
+}
+
+.section:has(+ .panoramas-grid),
+.section:has(+ .alojamientos),
+.section:has(+ .tabla-box),
+.section:has(+ .reserva-layout) {
+  padding-bottom: 0;
 }
 
 /* ===== Reserva: formulario + mapa lado a lado ===== */
@@ -224,7 +244,7 @@ img {
   align-items: center;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 6% 48px;
+  padding: var(--espacio-titulo) 6% var(--espacio-seccion);
 }
 
 /* tarjeta del formulario */
@@ -352,7 +372,6 @@ img {
   border-radius: 4px;
 }
 
-/* valor referencial del alojamiento */
 .resumen-alojamiento {
   display: none;
   padding: 12px 14px;
@@ -367,7 +386,7 @@ img {
   display: block;
 }
 
-/* mensaje de confirmacion tras enviar el formulario */
+/* mensaje de confirmacion formulario */
 .form-feedback {
   display: none;
   margin-top: 16px;
@@ -410,7 +429,6 @@ img {
   padding: 0;
 }
 
-/* mientras carga: fondo animado sin marco; al terminar aparece el mapa con su marco */
 .map-frame {
   position: relative;
   min-height: 420px;
@@ -477,7 +495,7 @@ img {
 /* tabla de informacion*/
 .tabla-box {
   margin: 0 auto;
-  padding: 0 6% 40px;
+  padding: var(--espacio-titulo) 6% var(--espacio-seccion);
   overflow-x: auto;
 }
 
@@ -531,7 +549,7 @@ img {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
-  padding: 24px 6% 72px;
+  padding: var(--espacio-titulo) 6% var(--espacio-seccion);
 }
 
 .card {
@@ -596,7 +614,6 @@ img {
   .panoramas-grid {
     grid-template-columns: 1fr;
     gap: 20px;
-    padding: 24px 6% 48px;
   }
 }
 
@@ -675,7 +692,7 @@ footer {
 /* tarjetas de alojamientos*/
 .alojamientos {
   margin: 0 auto;
-  padding: 0 6% 40px;
+  padding: var(--espacio-titulo) 6% var(--espacio-seccion);
   display: flex;
   flex-direction: column;
   gap: 24px;
