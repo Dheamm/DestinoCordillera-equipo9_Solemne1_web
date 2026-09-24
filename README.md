@@ -29,7 +29,7 @@ Sitio de 4 páginas que presenta un destino turístico de montaña: inicio con v
 ## Estructura del proyecto
 
 ```
-estinoCordillera-equipo9_Solemne1_web/
+DestinoCordillera-equipo9_Solemne1_web/
 ├── index.html
 ├── panoramas.html
 ├── alojamiento.html
@@ -39,6 +39,7 @@ estinoCordillera-equipo9_Solemne1_web/
 ├── js/
 │   └── main.js
 ├── img/
+│   └── imágenes (WebP), videos (MP4) y favicon
 └── README.md
 ```
 
