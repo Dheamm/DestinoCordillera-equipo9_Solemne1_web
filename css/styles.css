@@ -302,7 +302,6 @@ img {
 
 /* tabla de informacion*/
 .tabla-box {
-  max-width: 1300px;
   margin: 0 auto;
   padding: 0 6% 40px;
   overflow-x: auto;
@@ -489,7 +488,6 @@ footer {
 
 /* tarjetas de alojamientos*/
 .alojamientos {
-  max-width: 1300px;
   margin: 0 auto;
   padding: 0 6% 40px;
   display: flex;
