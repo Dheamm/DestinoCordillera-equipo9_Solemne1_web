@@ -10,7 +10,7 @@
   <body>
     <header class="navbar">
       <a href="index.html" class="logo">Destino Cordillera</a>
-      <button class="nav-toggle">☰</button>
+      <button class="nav-toggle" aria-label="Abrir menú">☰</button>
       <ul>
         <li><a href="index.html">Inicio</a></li>
         <li><a href="panoramas.html">Panoramas</a></li>
@@ -23,58 +23,156 @@
       <section class="section">
         <h2>Reserva tu experiencia</h2>
         <p>
-          Completa el formulario y nuestro equipo te contactará para coordinar
-          fechas y actividades.
+          Elige una actividad o un alojamiento, completa tus datos y nuestro
+          equipo te contactará para confirmar disponibilidad.
         </p>
       </section>
 
       <div class="reserva-layout">
         <form class="form-box" id="reserva-form">
-          <label for="nombre">Nombre completo</label>
-          <input
-            type="text"
-            id="nombre"
-            name="nombre"
-            placeholder="Tu nombre"
-            required
-          />
+          <fieldset class="tipo-reserva">
+            <legend>¿Qué quieres reservar?</legend>
+            <div class="tipo-opciones">
+              <label class="tipo-opcion">
+                <input type="radio" name="tipo" value="actividad" checked />
+                <span>Actividad</span>
+              </label>
+              <label class="tipo-opcion">
+                <input type="radio" name="tipo" value="alojamiento" />
+                <span>Alojamiento</span>
+              </label>
+            </div>
+          </fieldset>
 
-          <label for="email">Correo electrónico</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="tucorreo@ejemplo.com"
-            required
-          />
+          <div class="campos">
+            <div class="campo">
+              <label for="nombre">Nombre completo</label>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                placeholder="Tu nombre"
+                autocomplete="name"
+                required
+              />
+            </div>
 
-          <label for="fecha">Fecha estimada</label>
-          <input type="date" id="fecha" name="fecha" />
+            <div class="campo">
+              <label for="email">Correo electrónico</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="tucorreo@ejemplo.com"
+                autocomplete="email"
+                required
+              />
+            </div>
 
-          <label for="actividad">Actividad de interés</label>
-          <select id="actividad" name="actividad">
-            <option>Trekking guiado laguna</option>
-            <option>Mirador Cóndor</option>
-            <option>Cabalgata en el cerro</option>
-            <option>Otra</option>
-          </select>
+            <!-- Campos para ACTIVIDAD -->
+            <div class="campo campo-full" data-tipo="actividad">
+              <label for="actividad">Actividad</label>
+              <select id="actividad" name="actividad" required>
+                <optgroup label="Panoramas">
+                  <option>Trekking guiado laguna</option>
+                  <option>Mirador Cóndor</option>
+                  <option>Cabalgata en el cerro</option>
+                  <option>Termas del valle</option>
+                </optgroup>
+                <optgroup label="Rutas y lugares de interés">
+                  <option>Ruta de nieve</option>
+                  <option>Observación de estrellas</option>
+                  <option>Sendero de la cascada</option>
+                  <option>Recorrido por el pueblo</option>
+                </optgroup>
+                <optgroup label="Otro">
+                  <option>Otra actividad</option>
+                </optgroup>
+              </select>
+            </div>
 
-          <label for="mensaje">Mensaje</label>
-          <textarea
-            id="mensaje"
-            name="mensaje"
-            placeholder="Cuéntanos qué necesitas"
-          ></textarea>
+            <div class="campo" data-tipo="actividad">
+              <label for="fecha">Fecha estimada</label>
+              <input type="date" id="fecha" name="fecha" required />
+            </div>
 
-          <button type="submit" class="btn">Enviar solicitud</button>
-          <p id="form-feedback" class="form-feedback"></p>
+            <!-- Campos para ALOJAMIENTO -->
+            <div class="campo campo-full" data-tipo="alojamiento" hidden>
+              <label for="alojamiento">Alojamiento</label>
+              <select id="alojamiento" name="alojamiento" required disabled>
+                <option value="Hotel Boutique Andino" data-precio="60000">
+                  Hotel Boutique Andino - $60.000 por noche
+                </option>
+                <option value="Cabañas del Valle" data-precio="45000">
+                  Cabañas del Valle - $45.000 por noche
+                </option>
+                <option value="Refugio Cóndor" data-precio="20000">
+                  Refugio Cóndor - $20.000 por noche
+                </option>
+                <option value="Camping Río Claro" data-precio="10000">
+                  Camping Río Claro - $10.000 por noche
+                </option>
+              </select>
+            </div>
+
+            <div class="campo" data-tipo="alojamiento" hidden>
+              <label for="llegada">Llegada</label>
+              <input
+                type="date"
+                id="llegada"
+                name="llegada"
+                required
+                disabled
+              />
+            </div>
+
+            <div class="campo" data-tipo="alojamiento" hidden>
+              <label for="salida">Salida</label>
+              <input type="date" id="salida" name="salida" required disabled />
+            </div>
+
+            <div class="campo">
+              <label for="personas">Número de personas</label>
+              <input
+                type="number"
+                id="personas"
+                name="personas"
+                min="1"
+                max="20"
+                value="2"
+                required
+              />
+            </div>
+
+            <p
+              class="resumen-alojamiento campo-full"
+              id="resumen"
+              data-tipo="alojamiento"
+              hidden
+            ></p>
+
+            <div class="campo campo-full">
+              <label for="mensaje">Mensaje (opcional)</label>
+              <textarea
+                id="mensaje"
+                name="mensaje"
+                placeholder="Cuéntanos qué necesitas"
+              ></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-full">Enviar solicitud</button>
+          <p id="form-feedback" class="form-feedback" role="status"></p>
         </form>
 
         <section class="map-section">
-          <iframe
-            src="https://maps.google.com/maps?q=Caj%C3%B3n%20del%20Maipo&t=&z=11&ie=UTF8&iwloc=&output=embed"
-            loading="lazy"
-          ></iframe>
+          <div class="map-frame" id="map-frame">
+            <span class="map-loading">Cargando mapa…</span>
+            <iframe
+              title="Mapa de ubicación referencial"
+              src="https://maps.google.com/maps?q=Caj%C3%B3n%20del%20Maipo&t=&z=11&ie=UTF8&iwloc=&output=embed"
+            ></iframe>
+          </div>
           <p class="map-note">
             Ubicación referencial en la Cordillera de los Andes
           </p>

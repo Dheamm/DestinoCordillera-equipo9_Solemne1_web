@@ -14,6 +14,10 @@
   padding: 0;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   color: var(--ink);
@@ -156,6 +160,16 @@ img {
   border: none;
   cursor: pointer;
   font-size: 1rem;
+  transition: filter 0.2s;
+}
+
+.btn:hover {
+  filter: brightness(1.08);
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--forest);
+  outline-offset: 2px;
 }
 
 /* ===== Franja de accesos rápidos (Inicio) ===== */
@@ -202,19 +216,99 @@ img {
   font-size: 1.05rem;
 }
 
-/* ===== Formulario + mapa lado a lado (pagina Reserva) ===== */
+/* ===== Reserva: formulario + mapa lado a lado ===== */
 .reserva-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.15fr 1fr;
   gap: 40px;
   align-items: center;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 6% 40px;
+  padding: 0 6% 48px;
 }
 
+/* tarjeta del formulario */
 .form-box {
+  background: #fff;
+  border: 1px solid #cfc7b4;
+  border-radius: 6px;
+  padding: 28px;
+}
+
+/* selector Actividad / Alojamiento */
+.tipo-reserva {
+  border: none;
   padding: 0;
+  margin: 0 0 24px;
+  min-width: 0;
+}
+
+.tipo-reserva legend {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--forest);
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.tipo-opciones {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  padding: 4px;
+  background: var(--bone);
+  border-radius: 6px;
+}
+
+.form-box .tipo-opcion {
+  position: relative;
+  display: block;
+  margin: 0;
+}
+
+.tipo-opcion input {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  cursor: pointer;
+}
+
+.tipo-opcion span {
+  display: block;
+  text-align: center;
+  padding: 11px 12px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--sage);
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+.tipo-opcion input:checked + span {
+  background: var(--forest);
+  color: var(--bone);
+}
+
+.tipo-opcion input:focus-visible + span {
+  outline: 3px solid var(--ochre);
+  outline-offset: 2px;
+}
+
+/* campos en dos columnas */
+.campos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 16px;
+  margin-bottom: 24px;
+}
+
+.campo-full {
+  grid-column: 1 / -1;
 }
 
 .form-box label {
@@ -224,22 +318,53 @@ img {
   color: var(--sage);
 }
 
-.form-box input,
+.form-box input:not([type="radio"]),
 .form-box select,
 .form-box textarea {
   width: 100%;
   padding: 12px 14px;
-  margin-bottom: 20px;
   border: 1px solid #cfc7b4;
-  border-radius: 2px;
+  border-radius: 4px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
   background: #fff;
+  color: var(--ink);
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.form-box input:not([type="radio"]):focus,
+.form-box select:focus,
+.form-box textarea:focus {
+  outline: none;
+  border-color: var(--ochre);
+  box-shadow: 0 0 0 3px rgba(192, 138, 46, 0.25);
 }
 
 .form-box textarea {
   resize: vertical;
   min-height: 100px;
+}
+
+.btn-full {
+  width: 100%;
+  border-radius: 4px;
+}
+
+/* valor referencial del alojamiento */
+.resumen-alojamiento {
+  display: none;
+  padding: 12px 14px;
+  background: var(--bone);
+  border-left: 4px solid var(--ochre);
+  color: var(--forest);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.resumen-alojamiento.show {
+  display: block;
 }
 
 /* mensaje de confirmacion tras enviar el formulario */
@@ -251,6 +376,7 @@ img {
   color: var(--forest);
   border-left: 4px solid var(--ochre);
   font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 .form-feedback.show {
@@ -284,17 +410,65 @@ img {
   padding: 0;
 }
 
-.map-section iframe {
+/* mientras carga: fondo animado sin marco; al terminar aparece el mapa con su marco */
+.map-frame {
+  position: relative;
+  min-height: 420px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #e6dfcf 25%, #f3eee3 50%, #e6dfcf 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s linear infinite;
+}
+
+.map-frame iframe {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  min-height: 360px;
-  border: 3px solid var(--forest);
-  border-radius: 2px;
-  display: block;
+  border: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.map-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--sage);
+  font-size: 0.9rem;
+}
+
+.map-frame.loaded {
+  animation: none;
+  background: #fff;
+  box-shadow: 0 0 0 3px var(--forest);
+}
+
+.map-frame.loaded iframe {
+  opacity: 1;
+}
+
+.map-frame.loaded .map-loading {
+  display: none;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .map-frame {
+    animation: none;
+  }
 }
 
 .map-note {
-  margin-top: 10px;
+  margin-top: 14px;
   font-size: 0.85rem;
   color: var(--sage);
   text-align: center;
@@ -337,6 +511,18 @@ img {
 @media (max-width: 768px) {
   .reserva-layout {
     grid-template-columns: 1fr;
+  }
+
+  .form-box {
+    padding: 20px;
+  }
+
+  .campos {
+    grid-template-columns: 1fr;
+  }
+
+  .map-frame {
+    min-height: 300px;
   }
 }
 
